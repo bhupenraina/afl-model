@@ -30,6 +30,8 @@ away_team_stats = away_team_stats.rename(columns=away_rename)
 home_team_stats = home_team_stats.drop(columns=['player_team'])
 away_team_stats = away_team_stats.drop(columns=['player_team'])
 
+team_stats.to_csv('data/cleaned/team_stats.csv', index=False)
+
 match_stats = pd.merge(home_team_stats, away_team_stats, 
                         on=['match_id', 'match_date', 'match_round', 'venue_name',
                             'match_home_team', 'match_away_team',
